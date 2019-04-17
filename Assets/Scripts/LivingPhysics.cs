@@ -52,6 +52,8 @@ public class LivingPhysics : MonoBehaviour
 	private void OnHeal(Cursor c, float amount)
 	{
 		transform.position = living.StartPosition;
+		transform.localScale = living.StartScale;
+		transform.rotation = living.StartRotation;
 		rb.Sleep();
 	}
 

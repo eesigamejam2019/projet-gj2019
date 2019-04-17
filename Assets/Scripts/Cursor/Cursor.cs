@@ -10,19 +10,19 @@ public class Cursor : MonoBehaviour
 	[SerializeField]private KeyCode inputRight = KeyCode.RightArrow;
 
     [SerializeField]
-    private const float RADIUS_LIVING_DETECTION = 1f;
+    private float RADIUS_LIVING_DETECTION = 1f;
 
     [SerializeField]
-    private const float DAMAGE_VALUE = 0.001f;
+    private float DAMAGE_VALUE = 0.001f;
 
     [SerializeField]
-    private const float HEAL_VALUE = 0.001f;
+    private float HEAL_VALUE = 0.001f;
     
     public float RadiusLivingDetection { get { return RADIUS_LIVING_DETECTION; } }
 
     public float DamageValue { get { return DAMAGE_VALUE; } }
 
-    public float HealValue { get { return DAMAGE_VALUE; } }
+    public float HealValue { get { return HEAL_VALUE; } }
 
     public float speed;
 

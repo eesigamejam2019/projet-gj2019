@@ -19,8 +19,12 @@ public class LivingItem : MonoBehaviour, Damagable
     private Cursor damageCursor;
 
     private Vector3 startPosition;
+	private Quaternion startRotation;
+	private Vector3 startScale;
 
 	public Vector3 StartPosition { get { return startPosition; } }
+	public Quaternion StartRotation { get { return startRotation; } }
+	public Vector3 StartScale { get { return startScale; } }
 
     public delegate void HealEvent(Cursor healCursor, float f);
     public event HealEvent onHeal;
@@ -33,21 +37,25 @@ public class LivingItem : MonoBehaviour, Damagable
     {
         health = MAX_HEALTH;
         startPosition = transform.position;
+		startScale = transform.localScale;
+		startRotation = transform.rotation;
         this.healCursor = GameObject.FindGameObjectWithTag("Player").GetComponent<Cursor>();
-        this.damageCursor = GameObject.FindGameObjectWithTag("Balle").GetComponent<Cursor>();
+        this.damageCursor = GameObject.FindGameObjectWithTag("Ball").GetComponent<Cursor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
+        if (healCursor.GetSquareDistance(startPosition) < healCursor.RadiusLivingDetection)
         {
             Heal(healCursor.HealValue);
+			Debug.DrawLine(transform.position, healCursor.transform.position, Color.green);
         }
         if (damageCursor.GetSquareDistance(startPosition) < damageCursor.RadiusLivingDetection)
         {
             Damage(damageCursor.DamageValue);
-        }
+			Debug.DrawLine(transform.position, damageCursor.transform.position, Color.red);
+		}
     }
 
     public void Damage(float f)
