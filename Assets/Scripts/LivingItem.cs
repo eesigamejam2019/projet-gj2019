@@ -46,16 +46,14 @@ public class LivingItem : MonoBehaviour, Damagable
     // Update is called once per frame
     void Update()
     {
-        if (healCursor.GetSquareDistance(startPosition) < healCursor.RadiusLivingDetection)
+        if (healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
         {
             Heal(healCursor.HealValue);
-			Debug.DrawLine(transform.position, healCursor.transform.position, Color.green);
         }
-        if (damageCursor.GetSquareDistance(startPosition) < damageCursor.RadiusLivingDetection)
+        if (damageCursor.GetSquareDistance(startPosition) < Mathf.Pow(damageCursor.RadiusLivingDetection, 2))
         {
             Damage(damageCursor.DamageValue);
-			Debug.DrawLine(transform.position, damageCursor.transform.position, Color.red);
-		}
+        }
     }
 
     public void Damage(float f)
