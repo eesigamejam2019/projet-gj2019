@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8465786815314537065}
   - component: {fileID: 8465786815314537066}
   - component: {fileID: 8465786815314537069}
+  - component: {fileID: 686235679}
   m_Layer: 0
   m_Name: tree1
   m_TagString: Untagged
@@ -121,10 +122,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 8b131a6b01e06a745964c2ba6d1a097b, type: 3}
-  - {fileID: 21300000, guid: 8b88154cc7d70f64fb70ab7ea60bd70a, type: 3}
-  - {fileID: 21300000, guid: 73beb24701a4a614694992a6cc33dc84, type: 3}
+  - {fileID: 21300000, guid: db5626ed1f0027548b876dfccd39700c, type: 3}
+  - {fileID: 21300000, guid: 1a782d1837fa252428370594613297f4, type: 3}
+  - {fileID: 21300000, guid: 3f3348aa54ed9f44e8c837e9f2757c61, type: 3}
   currentSprite: 0
+--- !u!114 &686235679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465786815314537045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f447e22ae9ccf48a72f88dd0b12bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healShake: 1.5
 --- !u!1 &8465786815904054863
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8b131a6b01e06a745964c2ba6d1a097b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5626ed1f0027548b876dfccd39700c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

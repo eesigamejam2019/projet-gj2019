@@ -69,11 +69,24 @@ public class Cursor : MonoBehaviour
 		transform.position = pos;
 	}
 
+
+	//ATTENTION C EST MOCHE !
 	private void SetChildEnable(bool b)
 	{
 		foreach(Renderer r in GetComponentsInChildren<Renderer>())
 		{
+			if(r.GetType() != typeof(ParticleSystemRenderer))
+			{
 				r.enabled = b;
+			}else
+			{
+				var ps = r.gameObject.GetComponent<ParticleSystem>();
+				if (ps)
+				{
+					var emi =  ps.emission;
+					emi.enabled = b;
+				}	
+			}	
 		}
 	}
 
