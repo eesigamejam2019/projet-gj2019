@@ -39,7 +39,7 @@ public class LivingGraphics : MonoBehaviour
         }
         if (livingItem.isEndLife() && currentSprite != 2) // END LIFE
         {
-            currentSprite = 1;
+            currentSprite = 2;
             spriteRenderer.sprite = sprites[currentSprite];
         }
     }
