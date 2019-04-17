@@ -15,6 +15,12 @@ public class LivingItem : MonoBehaviour, Damagable
     private Cursor healCursor;
 
     private Cursor damageCursor;
+
+    public delegate void HealEvent(Cursor healCursor, float f);
+    private event HealEvent onHeal;
+
+    public delegate void DamageEvent(Cursor damageCursor, float f);
+    private event DamageEvent onDamage;
 	
     // Start is called before the first frame update
     void Start()
@@ -28,11 +34,25 @@ public class LivingItem : MonoBehaviour, Damagable
         
     }
 
+    public void suscribeToHealEvent(HealEvent func)
+    {
+        onHeal += func;
+    }
+
+    public void suscribeToDamageEvent(DamageEvent func)
+    {
+        onDamage += func;
+    }
+
     public void Damage(float f)
     {
         if (health > 0)
         {
             health -= f;
+            if (onDamage != null)
+            {
+                onDamage(damageCursor, f);
+            }
         } else
         {
             health = 0;
@@ -44,6 +64,10 @@ public class LivingItem : MonoBehaviour, Damagable
         if (health < MAX_HEALTH)
         {
             health += f;
+            if (onHeal != null)
+            {
+                onHeal(healCursor, f);
+            }
         } else
         {
             health = MAX_HEALTH;
