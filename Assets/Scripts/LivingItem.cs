@@ -31,13 +31,16 @@ public class LivingItem : MonoBehaviour, Damagable
     // Start is called before the first frame update
     void Start()
     {
+        health = MAX_HEALTH;
         startPosition = transform.position;
+        this.healCursor = GameObject.FindGameObjectWithTag("Player").GetComponent<Cursor>();
+        this.damageCursor = GameObject.FindGameObjectWithTag("Balle").GetComponent<Cursor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (healCursor.GetSquareDistance(startPosition) < healCursor.RadiusLivingDetection)
+        if (healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
         {
             Heal(healCursor.HealValue);
         }
