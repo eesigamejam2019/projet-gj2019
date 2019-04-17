@@ -81,8 +81,8 @@ public class Cursor : MonoBehaviour
 		return v;
     }
 
-	public float GetSquareDistance(Transform t)
+	public float GetSquareDistance(Vector3 v)
 	{
-		return Mathf.Pow((t.position.x - transform.position.x), 2) + Mathf.Pow((t.position.z - transform.position.z), 2);
+		return Mathf.Pow((v.x - transform.position.x), 2) + Mathf.Pow((v.z - transform.position.z), 2);
 	}
 }
