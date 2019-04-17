@@ -63647,7 +63647,7 @@ MonoBehaviour:
   heal: {fileID: 1189812509}
   damage: {fileID: 147963933}
   healColor: {r: 1, g: 1, b: 1, a: 0}
-  damageColor: {r: 0, g: 0, b: 0, a: 0.3647059}
+  damageColor: {r: 0, g: 0, b: 0, a: 0.6862745}
   dmgSize: 25
   healSize: 6
   curve:
