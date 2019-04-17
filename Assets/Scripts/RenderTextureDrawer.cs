@@ -8,7 +8,8 @@ public class RenderTextureDrawer : MonoBehaviour
 	public Cursor damage;
 	public Color healColor;
 	public Color damageColor;
-	public int size;
+	public int dmgSize = 30;
+	public int healSize = 20;
 	public AnimationCurve curve;
 
 	private Vector3 lastHealPos;
@@ -29,12 +30,12 @@ public class RenderTextureDrawer : MonoBehaviour
 	{
 
 		if(lastHealPos != heal.transform.position)
-		RaycastDraw(heal.transform.position, -Vector3.up, size, size, healColor);
+		RaycastDraw(heal.transform.position, -Vector3.up, healSize, healSize, healColor);
 
 
 		if (damage.active && lastDmgPos != damage.transform.position)
 		{
-			RaycastDraw(damage.transform.position, -Vector3.up, size, size, damageColor);
+			RaycastDraw(damage.transform.position, -Vector3.up, dmgSize, dmgSize, damageColor);
 			shake.Trigger();
 		}
 
