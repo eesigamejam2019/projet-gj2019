@@ -32,6 +32,15 @@ public class Cursor : MonoBehaviour
 
 	private Vector2 direction;
 
+	private bool _active = true;
+	public bool active {
+		get { return _active; }
+		set {
+			_active = value;
+			SetChildEnable(_active);
+		}
+		}
+
 	private void Update() {
 		direction = GetDirection();
 		transform.position += new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
@@ -58,6 +67,14 @@ public class Cursor : MonoBehaviour
 			pos.z = bound.y;
 		}
 		transform.position = pos;
+	}
+
+	private void SetChildEnable(bool b)
+	{
+		foreach(Renderer r in GetComponentsInChildren<Renderer>())
+		{
+				r.enabled = b;
+		}
 	}
 
     private Vector2 GetDirection(){
