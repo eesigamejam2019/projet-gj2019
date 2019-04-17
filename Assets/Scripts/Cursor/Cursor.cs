@@ -70,8 +70,4 @@ public class Cursor : MonoBehaviour
 	{
 		return Mathf.Pow((t.position.x - transform.position.x), 2) + Mathf.Pow((t.position.z - transform.position.z), 2);
 	}
-
-
-
-	
 }
