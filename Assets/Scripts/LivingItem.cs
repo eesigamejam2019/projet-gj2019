@@ -62,7 +62,7 @@ public class LivingItem : MonoBehaviour, Damagable
     {
         if (health > 0)
         {
-            health -= f;
+            health -= f * Time.deltaTime;
             if (onDamage != null)
             {
                 onDamage(damageCursor, f);
@@ -77,7 +77,7 @@ public class LivingItem : MonoBehaviour, Damagable
     {
         if (health < MAX_HEALTH)
         {
-            health += f;
+            health += f * Time.deltaTime;
             if (onHeal != null)
             {
                 onHeal(healCursor, f);

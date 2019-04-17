@@ -51,9 +51,9 @@ public class LivingPhysics : MonoBehaviour
 
 	private void OnHeal(Cursor c, float amount)
 	{
-		transform.position = living.StartPosition;
-		transform.localScale = living.StartScale;
-		transform.rotation = living.StartRotation;
+		transform.position += (living.StartPosition - transform.position) * 10 * Time.deltaTime;
+		transform.localScale += (living.StartScale - transform.localScale) * 10 * Time.deltaTime;
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, living.StartRotation, 300 * Time.deltaTime);
 		rb.Sleep();
 	}
 
