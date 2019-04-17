@@ -4,6 +4,7 @@ using System.Collections;
 public class LivingMove : MonoBehaviour
 {
 	private LivingItem living;
+	public float healShake = 1.5f;
 
 	private void Awake()
 	{
@@ -24,7 +25,8 @@ public class LivingMove : MonoBehaviour
 
 	private void OnHeal(Cursor c, float amount)
 	{
-
+		Vector2 r = Random.insideUnitCircle;
+		transform.position = living.StartPosition + new Vector3(r.x, 0, r.y) * healShake;
 	}
 
 	private void OnDamage(Cursor c, float amount)

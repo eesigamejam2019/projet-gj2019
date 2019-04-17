@@ -29,11 +29,11 @@ public class RenderTextureDrawer : MonoBehaviour
 	private void Update()
 	{
 
-		if(lastHealPos != heal.transform.position)
+		/*if(lastHealPos != heal.transform.position)*/
 		RaycastDraw(heal.transform.position, -Vector3.up, healSize, healSize, healColor);
 
 
-		if (damage.active && lastDmgPos != damage.transform.position)
+		if (damage.active /*&& lastDmgPos != damage.transform.position*/)
 		{
 			RaycastDraw(damage.transform.position, -Vector3.up, dmgSize, dmgSize, damageColor);
 			shake.Trigger();
@@ -56,7 +56,7 @@ public class RenderTextureDrawer : MonoBehaviour
 
 			float d = Mathf.Sqrt( Mathf.Pow((x - sizeX/2), 2) + Mathf.Pow((y - sizeY/2), 2));
 			d /= sizeX/2;
-			array[i] = Color.Lerp(c,a, curve.Evaluate(d));
+			array[i] = Color.Lerp(a,ColorToward(a,c,Time.deltaTime * 10), curve.Evaluate(d));
 		}
 			
 		texture.SetPixels(texPosX, texPosY, sizeX, sizeY, array);
@@ -74,5 +74,10 @@ public class RenderTextureDrawer : MonoBehaviour
 		pixelUV.x *= texture.width;
 		pixelUV.y *= texture.height;
 		DrawOnTexture((int)pixelUV.x - sizeX/2, (int)pixelUV.y - sizeY/2, sizeX, sizeY, c);
+	}
+
+	private Color ColorToward(Color from, Color to, float speed)
+	{
+		return new Color(from.r +(to.r - from.r) * speed, from.g + (to.g - from.g) * speed, from.b + (to.b - from.b) * speed, from.a + (to.a - from.a) * speed);
 	}
 }
