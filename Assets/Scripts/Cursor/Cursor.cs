@@ -85,4 +85,17 @@ public class Cursor : MonoBehaviour
 	{
 		return Mathf.Pow((v.x - transform.position.x), 2) + Mathf.Pow((v.z - transform.position.z), 2);
 	}
+
+	private void OnDrawGizmos()
+	{
+		Vector3 v1 = new Vector3(bound.x, transform.position.y, bound.y);
+		Vector3 v2 = new Vector3(bound.z, transform.position.y, bound.y);
+		Vector3 v3 = new Vector3(bound.z, transform.position.y, bound.w);
+		Vector3 v4 = new Vector3(bound.x, transform.position.y, bound.w);
+		Gizmos.color = Color.green;
+		Gizmos.DrawLine(v1, v2);
+		Gizmos.DrawLine(v2, v3);
+		Gizmos.DrawLine(v3, v4);
+		Gizmos.DrawLine(v4, v1);
+	}
 }
