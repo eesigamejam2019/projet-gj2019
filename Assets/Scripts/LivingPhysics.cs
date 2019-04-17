@@ -12,28 +12,31 @@ public class LivingPhysics : MonoBehaviour
 	{
 		living = GetComponent<LivingItem>();
 		rb = GetComponent<Rigidbody>();
-
-
 	}
 
 	private void Start()
 	{
 	}
 
+	//TODO : susbribe events
+	private void OnEnable()
+	{
+		
+	}
+
+	private void OnDisable()
+	{
+
+	}
+
 	private void Update()
 	{
-		if (living.Health <= 0)
-		{
-			//force
-			//rb.AddForce(living.damageCursor);
-		}
-
+		
 		if(living.Health >= living.Max_Health)
 		{
 			//sleep
 			rb.Sleep();
 		}
-
 	}
 
 	private void OnDamage(Cursor c, float amount)
@@ -47,6 +50,9 @@ public class LivingPhysics : MonoBehaviour
 
 	private void OnHeal(Cursor c, float amount)
 	{
-
+		//transform.position = living.startPosition;
+		//rb.Sleep();
 	}
+
+
 }
