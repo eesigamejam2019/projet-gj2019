@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LivingGraphics : MonoBehaviour
 {
@@ -29,13 +27,17 @@ public class LivingGraphics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (livingItem.isFullLife() && currentSprite != 0) // FULL life
+        if (livingItem.isFullLife() && currentSprite != 0) // FULL LIFE
         {
             currentSprite = 0;
             spriteRenderer.sprite = sprites[currentSprite];
         }
-        if (livingItem.isMidLife() && currentSprite != 1) // MID life
-	//	if(livingItem.Health < 50 && currentSprite != 1)
+        if (livingItem.isMidLife() && currentSprite != 1) // MID LIFE
+        {
+            currentSprite = 1;
+            spriteRenderer.sprite = sprites[currentSprite];
+        }
+        if (livingItem.isEndLife() && currentSprite != 2) // END LIFE
         {
             currentSprite = 1;
             spriteRenderer.sprite = sprites[currentSprite];
