@@ -10,10 +10,12 @@ public class LivingItem : MonoBehaviour, Damagable
     [SerializeField]
     private float health;
 
+    public float Health { get { return health; } }
+
     private Cursor healCursor;
 
     private Cursor damageCursor;
-
+	
     // Start is called before the first frame update
     void Start()
     {
