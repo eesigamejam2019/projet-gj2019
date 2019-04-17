@@ -7,10 +7,17 @@ public class LivingPhysics : MonoBehaviour
 	private LivingItem living;
 	private Rigidbody rb;
 
+
 	private void Awake()
 	{
 		living = GetComponent<LivingItem>();
 		rb = GetComponent<Rigidbody>();
+
+
+	}
+
+	private void Start()
+	{
 	}
 
 	private void Update()

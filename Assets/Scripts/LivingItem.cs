@@ -32,7 +32,6 @@ public class LivingItem : MonoBehaviour, Damagable
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void suscribeToHealEvent(HealEvent func)
