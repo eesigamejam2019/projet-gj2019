@@ -11,6 +11,7 @@ public class LivingItem : MonoBehaviour, Damagable
     private float health;
 
     public float Health { get { return health; } }
+	public float Max_Health { get { return MAX_HEALTH; } }
 
     private Cursor healCursor;
 
