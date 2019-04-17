@@ -87,4 +87,19 @@ public class LivingItem : MonoBehaviour, Damagable
             health = MAX_HEALTH;
         }
     }
+
+    public bool isFullLife()
+    {
+        return health >= MAX_HEALTH - 0.1 * MAX_HEALTH;
+    }
+
+    public bool isMidLife()
+    {
+        return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH && health >= 0.5 * MAX_HEALTH - 0.1 * MAX_HEALTH;
+    }
+
+    public bool isEndLife()
+    {
+        return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH;
+    }
 }
