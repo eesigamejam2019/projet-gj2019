@@ -11,37 +11,38 @@ public class LivingItem : MonoBehaviour, Damagable
     private float health;
 
     public float Health { get { return health; } }
+
 	public float Max_Health { get { return MAX_HEALTH; } }
 
     private Cursor healCursor;
 
     private Cursor damageCursor;
 
+    private Vector3 startPosition;
+
     public delegate void HealEvent(Cursor healCursor, float f);
-    private event HealEvent onHeal;
+    public event HealEvent onHeal;
 
     public delegate void DamageEvent(Cursor damageCursor, float f);
-    private event DamageEvent onDamage;
+    public event DamageEvent onDamage;
 	
     // Start is called before the first frame update
     void Start()
     {
-
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-    }
-
-    public void suscribeToHealEvent(HealEvent func)
-    {
-        onHeal += func;
-    }
-
-    public void suscribeToDamageEvent(DamageEvent func)
-    {
-        onDamage += func;
+        if (healCursor.GetSquareDistance(startPosition) < healCursor.RadiusLivingDetection)
+        {
+            Heal(healCursor.HealValue);
+        }
+        if (damageCursor.GetSquareDistance(startPosition) < damageCursor.RadiusLivingDetection)
+        {
+            Damage(damageCursor.DamageValue);
+        }
     }
 
     public void Damage(float f)
@@ -73,6 +74,4 @@ public class LivingItem : MonoBehaviour, Damagable
             health = MAX_HEALTH;
         }
     }
-
-
 }
