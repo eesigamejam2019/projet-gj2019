@@ -20,6 +20,8 @@ public class LivingItem : MonoBehaviour, Damagable
 
     private Vector3 startPosition;
 
+	public Vector3 StartPosition { get { return startPosition; } }
+
     public delegate void HealEvent(Cursor healCursor, float f);
     public event HealEvent onHeal;
 

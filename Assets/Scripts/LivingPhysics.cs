@@ -18,15 +18,16 @@ public class LivingPhysics : MonoBehaviour
 	{
 	}
 
-	//TODO : susbribe events
 	private void OnEnable()
 	{
-		
+		living.onHeal += OnHeal;
+		living.onDamage += OnDamage;
 	}
 
 	private void OnDisable()
 	{
-
+		living.onHeal -= OnHeal;
+		living.onDamage -= OnDamage;
 	}
 
 	private void Update()
@@ -50,8 +51,8 @@ public class LivingPhysics : MonoBehaviour
 
 	private void OnHeal(Cursor c, float amount)
 	{
-		//transform.position = living.startPosition;
-		//rb.Sleep();
+		transform.position = living.StartPosition;
+		rb.Sleep();
 	}
 
 
