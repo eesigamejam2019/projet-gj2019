@@ -95,7 +95,8 @@ public class LivingItem : MonoBehaviour, Damagable
 
     public bool isMidLife()
     {
-        return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH && health >= 0.5 * MAX_HEALTH - 0.1 * MAX_HEALTH;
+		// return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH && health >= 0.5 * MAX_HEALTH - 0.1 * MAX_HEALTH;
+		return health <= 0.5f * MAX_HEALTH;
     }
 
     public bool isEndLife()

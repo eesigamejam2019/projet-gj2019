@@ -14,10 +14,14 @@ public class LivingGraphics : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+	private void Awake()
+	{
+		livingItem = GetComponent<LivingItem>();
+		this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+	}
+	// Start is called before the first frame update
+	void Start()
     {
-        this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         this.currentSprite = 0;
         this.spriteRenderer.sprite = sprites[currentSprite];
     }
@@ -31,6 +35,7 @@ public class LivingGraphics : MonoBehaviour
             spriteRenderer.sprite = sprites[currentSprite];
         }
         if (livingItem.isMidLife() && currentSprite != 1) // MID life
+	//	if(livingItem.Health < 50 && currentSprite != 1)
         {
             currentSprite = 1;
             spriteRenderer.sprite = sprites[currentSprite];
