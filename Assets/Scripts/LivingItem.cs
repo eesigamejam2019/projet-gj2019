@@ -46,16 +46,16 @@ public class LivingItem : MonoBehaviour, Damagable
     // Update is called once per frame
     void Update()
     {
-        if (healCursor.GetSquareDistance(startPosition) < healCursor.RadiusLivingDetection)
+		if (healCursor.active)
+		if (healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
         {
             Heal(healCursor.HealValue);
-			Debug.DrawLine(transform.position, healCursor.transform.position, Color.green);
         }
-        if (damageCursor.GetSquareDistance(startPosition) < damageCursor.RadiusLivingDetection)
+		if (damageCursor.active)
+		if (damageCursor.GetSquareDistance(startPosition) < Mathf.Pow(damageCursor.RadiusLivingDetection, 2))
         {
             Damage(damageCursor.DamageValue);
-			Debug.DrawLine(transform.position, damageCursor.transform.position, Color.red);
-		}
+        }
     }
 
     public void Damage(float f)
@@ -95,7 +95,8 @@ public class LivingItem : MonoBehaviour, Damagable
 
     public bool isMidLife()
     {
-        return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH && health >= 0.5 * MAX_HEALTH - 0.1 * MAX_HEALTH;
+		// return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH && health >= 0.5 * MAX_HEALTH - 0.1 * MAX_HEALTH;
+		return health <= 0.5f * MAX_HEALTH;
     }
 
     public bool isEndLife()

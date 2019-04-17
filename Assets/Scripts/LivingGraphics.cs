@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LivingGraphics : MonoBehaviour
 {
@@ -14,10 +12,14 @@ public class LivingGraphics : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+	private void Awake()
+	{
+		livingItem = GetComponent<LivingItem>();
+		this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+	}
+	// Start is called before the first frame update
+	void Start()
     {
-        this.spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         this.currentSprite = 0;
         this.spriteRenderer.sprite = sprites[currentSprite];
     }
@@ -25,12 +27,17 @@ public class LivingGraphics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (livingItem.isFullLife() && currentSprite != 0) // FULL life
+        if (livingItem.isFullLife() && currentSprite != 0) // FULL LIFE
         {
             currentSprite = 0;
             spriteRenderer.sprite = sprites[currentSprite];
         }
-        if (livingItem.isMidLife() && currentSprite != 1) // MID life
+        if (livingItem.isMidLife() && currentSprite != 1) // MID LIFE
+        {
+            currentSprite = 1;
+            spriteRenderer.sprite = sprites[currentSprite];
+        }
+        if (livingItem.isEndLife() && currentSprite != 2) // END LIFE
         {
             currentSprite = 1;
             spriteRenderer.sprite = sprites[currentSprite];
