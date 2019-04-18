@@ -45,6 +45,8 @@ public class Cursor : MonoBehaviour
 	private float lastHealing;
 	public bool IsHealing { get { return isHealing; } }
 
+	public bool iaMode = false;
+
 	private void Update() {
 		direction = GetDirection();
 		transform.position += new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
@@ -106,6 +108,7 @@ public class Cursor : MonoBehaviour
 	}
 
     private Vector2 GetDirection(){
+		if (iaMode) return GetIaDirection();
 		Vector2 v = Vector2.zero;
 		if (Input.GetKey(inputForward))
 		{
@@ -125,6 +128,16 @@ public class Cursor : MonoBehaviour
 		}
 		return v;
     }
+
+	private Vector2 iaPos;
+	private Vector2 GetIaDirection()
+	{
+		Vector2 v = Vector2.zero;
+		v.x = Mathf.PerlinNoise(iaPos.x, iaPos.y+10) *2 -1;
+		v.y = Mathf.PerlinNoise(iaPos.x+100, iaPos.y) * 2 -1;
+		iaPos += Vector2.one * Time.deltaTime * 0.1f;
+		return v.normalized;
+	}
 
 	public float GetSquareDistance(Vector3 v)
 	{
