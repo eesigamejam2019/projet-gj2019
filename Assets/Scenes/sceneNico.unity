@@ -5273,6 +5273,7 @@ MonoBehaviour:
   speed: 100
   size: 0
   bound: {x: -303.3, y: -192.5, z: 538.2, w: 227}
+  iaMode: 0
 --- !u!114 &147963934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23149,6 +23150,7 @@ GameObject:
   - component: {fileID: 686419357}
   - component: {fileID: 686419356}
   - component: {fileID: 686419359}
+  - component: {fileID: 686419360}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -23471,6 +23473,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: b809158fd8639a349915ca3fd92d0dda, type: 2}
+--- !u!114 &686419360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686419350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf6cbf2ccea5004dbba1214cb6030e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState:
+  - time: 0
+    desactiveTime: 10
+    activeTime: 0
+  - time: 10
+    desactiveTime: 5
+    activeTime: 5
+  - time: 60
+    desactiveTime: 5
+    activeTime: 8
+  - time: 120
+    desactiveTime: 4
+    activeTime: 12
 --- !u!1001 &687533078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43570,6 +43597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1189812508}
   - component: {fileID: 1189812509}
+  - component: {fileID: 1189812510}
   m_Layer: 0
   m_Name: Crusor Player
   m_TagString: Player
@@ -43614,6 +43642,20 @@ MonoBehaviour:
   speed: 100
   size: 0
   bound: {x: -303.3, y: -192.5, z: 538.2, w: 227}
+  iaMode: 0
+--- !u!114 &1189812510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189812507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b885e4afc78b8e347b0f5d97a0deb2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 1233274393}
 --- !u!1001 &1192630230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44718,6 +44760,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f490cefa7f330524a8e9de2eb18c5c16, type: 3}
+--- !u!198 &1233274393 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1950931729406937361, guid: c6b2968d82d14f84b929a931df09927f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1342413465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1238753176
 PrefabInstance:
   m_ObjectHideFlags: 0
