@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 	private CursorTime cursorTime;
 
 	private int currentState;
+	private float time = 0;
 	void Start()
 	{
 		cursorTime = FindObjectOfType<CursorTime>();
@@ -14,11 +15,12 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
-		if(Time.time >= gameState[currentState].time && gameState.Length - 1 != currentState)
+		if(time >= gameState[currentState].time && gameState.Length - 1 != currentState)
 		{
 			switchState();
 			applyState();
 		}
+		time += Time.deltaTime;
 	}
 
 	private void switchState()

@@ -36,11 +36,15 @@ public class LivingItem : MonoBehaviour, Damagable
     public static event ChangeLife OnChangeLife;
 
     private LifeSlider lifeSlider;
+
+    private bool alive = true;
+	public bool Alive { get { return alive; } }
 	
     // Start is called before the first frame update
     void Start()
     {
         health = MAX_HEALTH;
+        alive = true;
         startPosition = transform.position;
 		startScale = transform.localScale;
 		startRotation = transform.rotation;
@@ -71,13 +75,14 @@ public class LivingItem : MonoBehaviour, Damagable
             {
                 onDamage(damageCursor, f);
             }
-        } else if (health - f <= 0)
+        } else
         {
             health = 0;
-            if (OnChangeLife != null)
+            if (alive && OnChangeLife != null)
             {
                 OnChangeLife(-1);
             }
+            alive = false;
         }
     }
 
@@ -91,13 +96,15 @@ public class LivingItem : MonoBehaviour, Damagable
             {
                 onHeal(healCursor, f);
             }
-        } else if (health + f >= MAX_HEALTH)
+        } else
         {
+
             health = MAX_HEALTH;
-            if (OnChangeLife != null)
+            if (!alive && OnChangeLife != null)
             {
                 OnChangeLife(1);
             }
+            alive = true;
         }
     }
 
@@ -114,6 +121,6 @@ public class LivingItem : MonoBehaviour, Damagable
 
     public bool isEndLife()
     {
-        return health <= 0.5 * MAX_HEALTH + 0.1 * MAX_HEALTH;
+        return health <= 0 + 0.1 * MAX_HEALTH;
     }
 }
