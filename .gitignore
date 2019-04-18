@@ -7,7 +7,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 
-/[Aa]ssets/sprite/*.meta
+/[Aa]ssets/sprite/*.png.meta
 /[Aa]ssets/Musics/*.meta
 
 # Never ignore Asset meta data
