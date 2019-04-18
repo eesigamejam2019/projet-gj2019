@@ -5273,7 +5273,7 @@ MonoBehaviour:
   speed: 100
   size: 0
   bound: {x: -303.3, y: -192.5, z: 538.2, w: 227}
-  iaMode: 1
+  iaMode: 0
 --- !u!114 &147963934
 MonoBehaviour:
   m_ObjectHideFlags: 0
