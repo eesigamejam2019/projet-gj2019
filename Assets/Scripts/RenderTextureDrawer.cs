@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.PostProcessing;
 public class RenderTextureDrawer : MonoBehaviour
 {
 	private Texture2D texture;
@@ -16,6 +16,11 @@ public class RenderTextureDrawer : MonoBehaviour
 	private Vector3 lastDmgPos;
 
 	private ScreenShake shake;
+	private PostProcessingBehaviour ppb;
+
+	public PostProcessingProfile hard;
+	public PostProcessingProfile normal;
+	
 	void Start()
 	{
 		texture = new Texture2D(256, 256);
@@ -24,6 +29,7 @@ public class RenderTextureDrawer : MonoBehaviour
 		texture.SetPixels(c);
 		GetComponent<Renderer>().material.mainTexture = texture;
 		shake = FindObjectOfType<ScreenShake>();
+		ppb = FindObjectOfType<PostProcessingBehaviour>();
 	}
 
 	private void Update()
@@ -36,7 +42,16 @@ public class RenderTextureDrawer : MonoBehaviour
 		if (damage.active && lastDmgPos != damage.transform.position)
 		{
 			RaycastDraw(damage.transform.position, -Vector3.up, dmgSize, dmgSize, damageColor,1);
-			shake.Trigger();
+			shake.Trigger();	
+		}
+
+		if (damage.active)
+		{
+			ppb.profile = hard;
+		}
+		else
+		{
+			ppb.profile = normal;
 		}
 
 		lastDmgPos = damage.transform.position;

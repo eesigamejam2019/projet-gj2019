@@ -22,7 +22,7 @@ public class CursorTime : MonoBehaviour
     void Update()
     {
 		time += Time.deltaTime;
-		Debug.Log(time);
+		//Debug.Log(time);
 		c.active = time <= activeTime;
 		if(time > activeTime+ desactiveTime)
 		{
