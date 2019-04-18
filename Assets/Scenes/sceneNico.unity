@@ -23148,6 +23148,7 @@ GameObject:
   - component: {fileID: 686419358}
   - component: {fileID: 686419357}
   - component: {fileID: 686419356}
+  - component: {fileID: 686419359}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -23457,6 +23458,19 @@ MonoBehaviour:
   sweet: {fileID: 8300000, guid: 07bfefb89d6cc5a44bd9b422a01a2dcd, type: 3}
   speed: 10
   bad: {fileID: 147963933}
+--- !u!114 &686419359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686419350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: b809158fd8639a349915ca3fd92d0dda, type: 2}
 --- !u!1001 &687533078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48754,6 +48768,11 @@ PrefabInstance:
       propertyPath: NoiseModule.frequency
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1950931729406937361, guid: c6b2968d82d14f84b929a931df09927f,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1950931729406937360, guid: c6b2968d82d14f84b929a931df09927f,
         type: 3}
       propertyPath: m_SortingOrder
@@ -63982,7 +64001,7 @@ MonoBehaviour:
   heal: {fileID: 1189812509}
   damage: {fileID: 147963933}
   healColor: {r: 1, g: 1, b: 1, a: 0}
-  damageColor: {r: 0, g: 0, b: 0, a: 0.6862745}
+  damageColor: {r: 0.6901961, g: 0.627451, b: 0.5803922, a: 1}
   dmgSize: 25
   healSize: 6
   curve:
