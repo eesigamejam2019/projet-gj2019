@@ -1,24 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: e546517592ca3d34f835897fc4fa353e
-=======
 guid: 1341a1c5410f96340a71f55b34915f3f
->>>>>>> 8f8c1ecc8acb75c5c7f98ca221a128d2fe4da032
-=======
-guid: 78240024c32044d4ba0fbb5b900b189c
->>>>>>> f7bcad1ba9dbf9ae6f55c357026df7cf17a1132d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    2186277476908879412: ImportLogs
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD
     enableMipMap: 1
-=======
-    enableMipMap: 0
->>>>>>> f7bcad1ba9dbf9ae6f55c357026df7cf17a1132d
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -46,7 +35,6 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-<<<<<<< HEAD
     wrapU: -1
     wrapV: -1
     wrapW: -1
@@ -54,15 +42,6 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 0
-=======
-    wrapU: 1
-    wrapV: 1
-    wrapW: -1
-  nPOTScale: 0
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 1
->>>>>>> f7bcad1ba9dbf9ae6f55c357026df7cf17a1132d
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,46 +50,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-<<<<<<< HEAD
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 0
-=======
-  alphaIsTransparency: 1
-  spriteTessellationDetail: -1
-  textureType: 8
->>>>>>> f7bcad1ba9dbf9ae6f55c357026df7cf17a1132d
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  platformSettings:
-  - serializedVersion: 2
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
->>>>>>> f7bcad1ba9dbf9ae6f55c357026df7cf17a1132d
+  platformSettings: []
   spriteSheet:
     serializedVersion: 2
     sprites: []
