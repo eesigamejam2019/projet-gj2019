@@ -85,7 +85,6 @@ public class Cursor : MonoBehaviour
 		isHealing = true;
 		lastHealing = Time.time;
 	}
-
 	
 	//ATTENTION C EST MOCHE !
 	private void SetChildEnable(bool b)
@@ -100,9 +99,7 @@ public class Cursor : MonoBehaviour
 				var ps = r.gameObject.GetComponent<ParticleSystem>();
 				if (ps)
 				{
-					/*var emi =  ps.emission;
-					if(emi.enabled != b)
-						emi.enabled = b;*/
+					var emi =  ps.emission;
 					
 					if (b)
 					{
@@ -112,6 +109,27 @@ public class Cursor : MonoBehaviour
 					{
 						if (ps.isPlaying)
 							ps.Stop();
+					}
+
+
+					if (b)
+					{
+						if(ps.particleCount <= 1)
+						{
+							ps.gameObject.SetActive(false);
+							ps.gameObject.SetActive(true);
+							ps.enableEmission = false;
+							ps.enableEmission = true;
+							emi.enabled = false;
+							emi.enabled = true;
+
+							var temp = Instantiate(ps.gameObject, ps.transform.parent);
+							temp.transform.position = ps.transform.position;
+							DestroyImmediate(ps.gameObject);
+							Debug.Log(temp);
+
+							
+						}
 					}
 				}	
 			}	
