@@ -86,7 +86,7 @@ public class Cursor : MonoBehaviour
 		lastHealing = Time.time;
 	}
 
-
+	
 	//ATTENTION C EST MOCHE !
 	private void SetChildEnable(bool b)
 	{
@@ -100,8 +100,19 @@ public class Cursor : MonoBehaviour
 				var ps = r.gameObject.GetComponent<ParticleSystem>();
 				if (ps)
 				{
-					var emi =  ps.emission;
-					emi.enabled = b;
+					/*var emi =  ps.emission;
+					if(emi.enabled != b)
+						emi.enabled = b;*/
+					
+					if (b)
+					{
+						if(!ps.isPlaying)
+						ps.Play();
+					}else
+					{
+						if (ps.isPlaying)
+							ps.Stop();
+					}
 				}	
 			}	
 		}
