@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 80d439604b4b11f4a9e8fe279a53a7ab
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DIN Pro
+  fontNames:
+  - DIN Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 200fe2346fbb64a139a7c9825476a351, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

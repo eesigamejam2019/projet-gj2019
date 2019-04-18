@@ -50,7 +50,7 @@ public class Cursor : MonoBehaviour
 		transform.position += new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
 		Bounds();
 
-		if(Time.time - lastHealing > 0.5f)
+		if(Time.time - lastHealing > 0.2f)
 		{
 			isHealing = false;
 		}
