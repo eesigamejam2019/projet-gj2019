@@ -41,10 +41,19 @@ public class Cursor : MonoBehaviour
 		}
 		}
 
+	private bool isHealing;
+	private float lastHealing;
+	public bool IsHealing { get { return isHealing; } }
+
 	private void Update() {
 		direction = GetDirection();
 		transform.position += new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
 		Bounds();
+
+		if(Time.time - lastHealing > 0.5f)
+		{
+			isHealing = false;
+		}
     }
 
 	private void Bounds()
@@ -67,6 +76,12 @@ public class Cursor : MonoBehaviour
 			pos.z = bound.y;
 		}
 		transform.position = pos;
+	}
+
+	public void SetHealing()
+	{
+		isHealing = true;
+		lastHealing = Time.time;
 	}
 
 

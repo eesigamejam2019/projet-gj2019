@@ -7,8 +7,19 @@
 /[Bb]uilds/
 /[Ll]ogs/
 
+/[Aa]ssets/sprite/**/*.meta
+/[Aa]ssets/Musics/**/*.meta
+
 # Never ignore Asset meta data
-!/[Aa]ssets/**/*.meta
+!/[Aa]ssets/Scenes/**/*.meta
+!/[Aa]ssets/Material/**/*.meta
+!/[Aa]ssets/modeles3D/**/*.meta
+!/[Aa]ssets/Polices/**/*.meta
+!/[Aa]ssets/Prefab/**/*.meta
+!/[Aa]ssets/Scripts/**/*.meta
+!/[Aa]ssets/Shader/**/*.meta
+!/[Aa]ssets/Scenes/**/*.meta
+!/Assets/PostProcessing/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
