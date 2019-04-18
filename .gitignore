@@ -11,7 +11,14 @@
 /[Aa]ssets/Musics/*.meta
 
 # Never ignore Asset meta data
-!/[Aa]ssets/**/*.meta
+!/[Aa]ssets/Scenes/**/*.meta
+!/[Aa]ssets/Material/**/*.met
+!/[Aa]ssets/modeles3D/**/*.met
+!/[Aa]ssets/Polices/**/*.met
+!/[Aa]ssets/Prefab/**/*.met
+!/[Aa]ssets/Scripts/**/*.met
+!/[Aa]ssets/Shader/**/*.met
+!/[Aa]ssets/Scenes/**/*.met
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
