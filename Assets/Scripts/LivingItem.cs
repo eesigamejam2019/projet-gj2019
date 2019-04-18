@@ -31,6 +31,11 @@ public class LivingItem : MonoBehaviour, Damagable
 
     public delegate void DamageEvent(Cursor damageCursor, float f);
     public event DamageEvent onDamage;
+
+    public delegate void ChangeLife(int value);
+    public static event ChangeLife OnChangeLife;
+
+    private LifeSlider lifeSlider;
 	
     // Start is called before the first frame update
     void Start()
@@ -41,18 +46,17 @@ public class LivingItem : MonoBehaviour, Damagable
 		startRotation = transform.rotation;
         this.healCursor = GameObject.FindGameObjectWithTag("Player").GetComponent<Cursor>();
         this.damageCursor = GameObject.FindGameObjectWithTag("Ball").GetComponent<Cursor>();
+        lifeSlider = GameObject.FindObjectOfType<LifeSlider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (healCursor.active)
-		if (healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
+		if (healCursor.active && healCursor.GetSquareDistance(startPosition) < Mathf.Pow(healCursor.RadiusLivingDetection, 2))
         {
             Heal(healCursor.HealValue);
         }
-		if (damageCursor.active)
-		if (damageCursor.GetSquareDistance(startPosition) < Mathf.Pow(damageCursor.RadiusLivingDetection, 2))
+		if (damageCursor.active && damageCursor.GetSquareDistance(startPosition) < Mathf.Pow(damageCursor.RadiusLivingDetection, 2))
         {
             Damage(damageCursor.DamageValue);
         }
@@ -67,9 +71,13 @@ public class LivingItem : MonoBehaviour, Damagable
             {
                 onDamage(damageCursor, f);
             }
-        } else
+        } else if (health - f <= 0)
         {
             health = 0;
+            if (OnChangeLife != null)
+            {
+                OnChangeLife(-1);
+            }
         }
     }
 
@@ -83,9 +91,13 @@ public class LivingItem : MonoBehaviour, Damagable
             {
                 onHeal(healCursor, f);
             }
-        } else
+        } else if (health + f >= MAX_HEALTH)
         {
             health = MAX_HEALTH;
+            if (OnChangeLife != null)
+            {
+                OnChangeLife(1);
+            }
         }
     }
 
