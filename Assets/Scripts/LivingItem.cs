@@ -90,6 +90,7 @@ public class LivingItem : MonoBehaviour, Damagable
         if (health < MAX_HEALTH)
         {
             health += f * Time.deltaTime;
+			healCursor.SetHealing();
             if (onHeal != null)
             {
                 onHeal(healCursor, f);
