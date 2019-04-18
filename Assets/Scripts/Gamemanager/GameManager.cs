@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
 	private void applyState()
 	{
+		cursorTime.ResetTime();
+		time = 0;
 		cursorTime.activeTime = gameState[currentState].activeTime;
 		cursorTime.desactiveTime = gameState[currentState].desactiveTime;
 	}

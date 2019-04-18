@@ -15,17 +15,23 @@ public class CursorTime : MonoBehaviour
 	{
 		c = GetComponent<Cursor>();
 		c.active = false;
-		time = activeTime + 0.1f;
+		time = 0;
 	}
 
     // Update is called once per frame
     void Update()
     {
 		time += Time.deltaTime;
+		Debug.Log(time);
 		c.active = time <= activeTime;
 		if(time > activeTime+ desactiveTime)
 		{
 			time = 0;
 		}
     }
+
+	public void ResetTime()
+	{
+		time = 0;
+	}
 }
