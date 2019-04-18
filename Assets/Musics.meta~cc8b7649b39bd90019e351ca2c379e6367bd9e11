@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Musics.meta
+guid: b3b15d3b8ae3fe640a0ad39a2e3c0237
+=======
 guid: 67059fb35cd380242b91f32ccc480b2b
+>>>>>>> cc8b7649b39bd90019e351ca2c379e6367bd9e11:Assets/Musics.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
