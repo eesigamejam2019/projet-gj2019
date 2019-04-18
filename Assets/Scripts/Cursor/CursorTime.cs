@@ -10,11 +10,13 @@ public class CursorTime : MonoBehaviour
 
 	private Cursor c;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		c = GetComponent<Cursor>();
-    }
+		c.active = false;
+		time = activeTime + 0.1f;
+	}
 
     // Update is called once per frame
     void Update()

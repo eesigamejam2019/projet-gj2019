@@ -5286,7 +5286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeTime: 5
-  desactiveTime: 2
+  desactiveTime: 5
 --- !u!1 &150399330
 GameObject:
   m_ObjectHideFlags: 0
